@@ -48,7 +48,7 @@ public class Lab9P1_DiegoDiaz {
             
             switch (opcion) {
                 case 1:
-                    System.out.println("Bueno");
+                    cambiarBoss(bosses, beaten, registrosLogs);
                     break;
                 case 2:
                     System.out.println("JjJsjsjsj");
@@ -119,8 +119,22 @@ public class Lab9P1_DiegoDiaz {
             }
         }
     }
+    public static void infoBoss(String[]bosses, int[]beaten){
+        System.out.print("Ingrese posicion del boss (0-7): ");
+        int pos = leer.nextInt();
+        leer.nextLine(); 
         
+        if (pos >= 0 && pos <= 7) {
+            String bono = (bosses[pos].length() % 2 != 0) ? "fuerza" : "vida";
+            System.out.println("Boss: " + bosses[pos] + " | Derrotas: " + beaten[pos] + " | Bono: " + bono);
+        } else {
+            System.out.println("Posicion incorrecta.");
+        }
     }
+
+    }
+        
+    
     
     
 
