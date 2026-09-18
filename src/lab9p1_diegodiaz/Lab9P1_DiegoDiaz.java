@@ -4,7 +4,10 @@
  */
 package lab9p1_diegodiaz;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
 
 /**
  *
@@ -17,8 +20,17 @@ public class Lab9P1_DiegoDiaz {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         int opcion;
-        // TODO code application logic here
+        MegaMan Player = new MegaMan(100.0, 100.0,0,0);
+        String[] bosses = {"Acid Man", "Blast Man", "Block Man", "Bounce Man", "Fuse Man", "Impact Man", "Torch Man", "Tundra Man"};
+        
+        int[] beaten = new int[8];
+        Savefile[] archivosGuardado = new Savefile [10];
+        ArrayList<String[]> registrosLogs = new ArrayList<>();
+        
+        
+        
         
         do {
            
@@ -66,6 +78,56 @@ public class Lab9P1_DiegoDiaz {
     }
     
     
+    public static void cambiarBoss(String [] bosses, int [] beaten, ArrayList<String[]> logs){
+       System.out.println("jefes actuales:");
+        for (int i = 0; i < bosses.length; i++) {
+            System.out.println(i + ". [" + bosses[i] + "]");
+        }
+        System.out.print("Nombre del boss a cambiar: ");
+        String nomAnterior = leer.nextLine();
+        System.out.print("Nombre del nuevo boss: ");
+        String nuevo = leer.nextLine();
+        
+        boolean nomactual = false;
+        for (int i = 0; i < bosses.length; i++) {
+            if (bosses[i].equalsIgnoreCase(nuevo)) {
+                nomactual = true;
+            }
+        }
+        if (nomactual) {
+            System.out.println("Ese jefe ya esta en el arreglo.");
+        } else {
+            int indice = -1;
+            for (int i = 0; i < bosses.length; i++) {
+                if (bosses[i].equalsIgnoreCase(nomAnterior)) {
+                    indice = i;
+                }
+            }
+            
+            if (indice != -1) {
+                String[] copia = new String[8];
+                for (int k = 0; k < 8; k++) {
+                    copia[k] = bosses[k];
+                }
+                logs.add(copia);
+                
+                bosses[indice] = nuevo;
+                beaten[indice] = 0;
+                System.out.println("Se reemplazo el boss correctamente.");
+            } else {
+                System.out.println("No se encontro el boss anterior.");
+            }
+        }
+    }
+        
+    }
     
     
-}
+
+    
+     
+
+        
+    
+    
+
