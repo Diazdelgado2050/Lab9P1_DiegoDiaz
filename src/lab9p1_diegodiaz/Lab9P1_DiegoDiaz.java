@@ -51,7 +51,7 @@ public class Lab9P1_DiegoDiaz {
                     cambiarBoss(bosses, beaten, registrosLogs);
                     break;
                 case 2:
-                    System.out.println("JjJsjsjsj");
+                    infoBoss(bosses, beaten);
                     break;
                 case 3:
                     System.out.println("333");
@@ -72,7 +72,7 @@ public class Lab9P1_DiegoDiaz {
             }
             
             
-        } while (opcion == 7);
+        } while (opcion != 7);
         System.out.println("Saliendo de el programa..");
         
     }
@@ -121,7 +121,7 @@ public class Lab9P1_DiegoDiaz {
         }
     }
     public static void infoBoss(String[]bosses, int[]beaten){
-        System.out.print("Ingrese posicion del boss (0-7): ");
+        System.out.print("Ingrese posicion del boss del ( de 0 a 7): ");
         int pos = leer.nextInt();
         leer.nextLine(); 
         
@@ -132,17 +132,55 @@ public class Lab9P1_DiegoDiaz {
             System.out.println("Posicion incorrecta.");
         }
     }
-    public static void ordenBosses(String bosses, int[] beaten){
+    public static void ordenBosses(String []bosses, int[] beaten){
         System.out.println("1) Por la primera letra");
         System.out.println("2) por la cantidad de letras");
         System.out.println("Elige la manera a ordenar los bosses: ");
         int op = leer.nextInt();
         leer.nextLine();
         
+        if (op == 1) {
+            for (int i = 0; i < bosses.length; i++) {
+                for (int j = 0; j < bosses.length - 1; j++) {
+                    if (bosses[j].charAt(0) > bosses[j+1].charAt(0)) {
+                        String temp = bosses[j];
+                        bosses[j] = bosses[j+1];
+                        bosses[j+1] = temp;
+                    }
+                }
+            }
+        } else if (op == 2) {
+            ordenarR(bosses, bosses.length);
+        }
+        
+        for (int i = 0; i < bosses.length; i++) {
+            beaten[i] = 0;
+        }
+        System.out.println("Arreglo ordenado correctamente ");
+    }
+    public static void ordenarR(String[] arr, int tam) {
+        if (tam <= 1) {
+            return;
+        }
+        for (int i = 0; i < tam - 1; i++) {
+            if (arr[i].length() > arr[i + 1].length()) {
+                String temporal = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temporal;
+            }
+        }
+        ordenarR(arr, tam - 1);
+    }
+    public static void buscarEnLogs(ArrayList<String[]> lista) {
+        System.out.print("Nombre del jefe a buscar: ");
+        String jefeBuscado = leer.nextLine();
+        
         
     }
+}
+    
 
-    }
+    
         
     
     
