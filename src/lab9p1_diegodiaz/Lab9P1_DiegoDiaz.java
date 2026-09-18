@@ -83,8 +83,9 @@ public class Lab9P1_DiegoDiaz {
         for (int i = 0; i < bosses.length; i++) {
             System.out.println(i + ". [" + bosses[i] + "]");
         }
-        System.out.print("Nombre del boss a cambiar: ");
+        System.out.print("Nombre del boss a cambiar: "); 
         String nomAnterior = leer.nextLine();
+        
         System.out.print("Nombre del nuevo boss: ");
         String nuevo = leer.nextLine();
         
@@ -113,9 +114,9 @@ public class Lab9P1_DiegoDiaz {
                 
                 bosses[indice] = nuevo;
                 beaten[indice] = 0;
-                System.out.println("Se reemplazo el boss correctamente.");
+                System.out.println("Se reemplazo el boss correctamente ");
             } else {
-                System.out.println("No se encontro el boss anterior.");
+                System.out.println("No se encontro el boss anterior ");
             }
         }
     }
@@ -130,6 +131,15 @@ public class Lab9P1_DiegoDiaz {
         } else {
             System.out.println("Posicion incorrecta.");
         }
+    }
+    public static void ordenBosses(String bosses, int[] beaten){
+        System.out.println("1) Por la primera letra");
+        System.out.println("2) por la cantidad de letras");
+        System.out.println("Elige la manera a ordenar los bosses: ");
+        int op = leer.nextInt();
+        leer.nextLine();
+        
+        
     }
 
     }
