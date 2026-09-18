@@ -127,7 +127,7 @@ public class Lab9P1_DiegoDiaz {
         
         if (pos >= 0 && pos <= 7) {
             String bono = (bosses[pos].length() % 2 != 0) ? "fuerza" : "vida";
-            System.out.println("Boss: " + bosses[pos] + " | Derrotas: " + beaten[pos] + " | Bono: " + bono);
+            System.out.println("Boss: " + bosses[pos] +" |Derrotas: " + beaten[pos] + "|Bono: " + bono);
         } else {
             System.out.println("Posicion incorrecta.");
         }
@@ -171,13 +171,33 @@ public class Lab9P1_DiegoDiaz {
         }
         ordenarR(arr, tam - 1);
     }
-    public static void buscarEnLogs(ArrayList<String[]> lista) {
-        System.out.print("Nombre del jefe a buscar: ");
-        String jefeBuscado = leer.nextLine();
+    public static void BuscarenLogs(ArrayList<String[]> lista) {
+        System.out.print("Nombre del jefe a buscar en los registros del dr.Light: ");
+        String buscarJefe = leer.nextLine();
         
-        
+        for (int i = 0; i < lista.size(); i++) {
+            String[] arregloActual = lista.get(i);
+            boolean nomactual = false;
+            
+            for (int k = 0; k < arregloActual.length; k++) {
+                if (arregloActual[k].equalsIgnoreCase(buscarJefe)) {
+                    nomactual = true;
+                }
+            }
+            
+            if (nomactual) {
+                System.out.println("Log" + i + ":");
+                for (int j = 0; j < 10; j++) {
+                    
+                }
+            }
+        }
     }
 }
+        
+        
+    
+
     
 
     
