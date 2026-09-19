@@ -64,7 +64,7 @@ public class Lab9P1_DiegoDiaz {
                     partidas(archivosGuardado);           
                     break;
                 case 6:
-                    iniciarJuego()
+                    iniciarJuego(Player, bosses, beaten, archivosGuardado);
                     break;
                 default:
                     throw new AssertionError();
@@ -239,6 +239,7 @@ public class Lab9P1_DiegoDiaz {
         
 }
 }
+
 
 
 
