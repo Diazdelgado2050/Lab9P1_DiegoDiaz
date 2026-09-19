@@ -78,28 +78,31 @@ public class Lab9P1_DiegoDiaz {
     
     
     public static void cambiarBoss(String [] bosses, int [] beaten, ArrayList<String[]> logs){
-       System.out.println("jefes actuales:");
+       System.out.println("Jefes actuales:");
         for (int i = 0; i < bosses.length; i++) {
             System.out.println(i + ". [" + bosses[i] + "]");
         }
-        System.out.print("Nombre del boss a cambiar: "); 
-        String nomAnterior = leer.nextLine();
         
+        leer.nextLine();
+    
+        System.out.print("Nombre del boss a cambiar: ");
+        String viejo = leer.nextLine();
         System.out.print("Nombre del nuevo boss: ");
         String nuevo = leer.nextLine();
         
-        boolean nomactual = false;
+        boolean existe = false;
         for (int i = 0; i < bosses.length; i++) {
             if (bosses[i].equalsIgnoreCase(nuevo)) {
-                nomactual = true;
+                existe = true;
             }
         }
-        if (nomactual) {
+        
+        if (existe) {
             System.out.println("Ese jefe ya esta en el arreglo.");
         } else {
             int indice = -1;
             for (int i = 0; i < bosses.length; i++) {
-                if (bosses[i].equalsIgnoreCase(nomAnterior)) {
+                if (bosses[i].equalsIgnoreCase(viejo)) {
                     indice = i;
                 }
             }
@@ -113,9 +116,9 @@ public class Lab9P1_DiegoDiaz {
                 
                 bosses[indice] = nuevo;
                 beaten[indice] = 0;
-                System.out.println("Se reemplazo el boss correctamente ");
+                System.out.println("Se reemplazo el boss correctamente.");
             } else {
-                System.out.println("No se encontro el boss anterior ");
+                System.out.println("No se encontro el boss anterior.");
             }
         }
     }
