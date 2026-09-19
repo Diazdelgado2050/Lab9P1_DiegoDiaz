@@ -171,16 +171,23 @@ public class Lab9P1_DiegoDiaz {
         }
         ordenarR(arr, tam - 1);
     }
-    public static void BuscarenLogs(ArrayList<String[]> lista) {
+    public static void BuscarenLogs(ArrayList<String[]> logs) {
         System.out.print("Nombre del jefe a buscar en los registros del dr.Light: ");
         String buscarJefe = leer.nextLine();
+        buscarEnarreglo(logs, buscarJefe);
+   
         
+        
+    }
+    public static void buscarEnarreglo(ArrayList<String[]> lista, String jefe){
+        
+        System.out.println("Resultados de busqueda en arreglo de jefe:" + jefe);
         for (int i = 0; i < lista.size(); i++) {
             String[] arregloActual = lista.get(i);
             boolean nomactual = false;
             
             for (int k = 0; k < arregloActual.length; k++) {
-                if (arregloActual[k].equalsIgnoreCase(buscarJefe)) {
+                if (arregloActual[k].equalsIgnoreCase(jefe)) {
                     nomactual = true;
                 }
             }
@@ -188,10 +195,10 @@ public class Lab9P1_DiegoDiaz {
             if (nomactual) {
                 System.out.print("Log " + i + ": ");
                 for (int j = 0; j < arregloActual.length; j++) {
-                    if (arregloActual[j].equalsIgnoreCase(buscarJefe)) {
+                    if (arregloActual[j].equalsIgnoreCase(jefe)) {
                         System.out.print(arregloActual[j].toLowerCase() + "  ");
                     } else {
-                        System.out.print("- -  ");
+                        System.out.print("- -  -");
                     }
                 }
                 System.out.println();
@@ -199,6 +206,15 @@ public class Lab9P1_DiegoDiaz {
         }
     }
 }
+
+
+
+
+            
+           
+                
+      
+
         
     
                     
