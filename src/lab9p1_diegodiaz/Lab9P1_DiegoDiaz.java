@@ -82,6 +82,8 @@ public class Lab9P1_DiegoDiaz {
         for (int i = 0; i < bosses.length; i++) {
             System.out.println(i + ". [" + bosses[i] + "]");
         }
+        
+        leer.nextLine();
         System.out.print("Nombre del boss a cambiar: "); 
         String nomAnterior = leer.nextLine();
         
