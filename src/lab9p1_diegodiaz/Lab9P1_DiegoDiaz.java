@@ -205,6 +205,27 @@ public class Lab9P1_DiegoDiaz {
             }
         }
     }
+    public static void partidas(Savefile[] archivos){
+        for (int i = 0; i < archivos.length; i++) {
+            if (archivos[i] != null) {
+                System.out.println("----->");
+                if (archivos[i].getSuccess()) {
+                    System.out.println("Juego completado muy bien");
+                }else{
+                    System.out.println("Gmme over");
+                    
+                }
+                System.out.println("vidas: " + archivos[i].getLives());
+                System.out.print("[ ");
+                String[] boss = archivos[i].getBosses();
+                int[] d = archivos[i].getBeaten();
+                for(int j = 0; j < boss.length; j++){
+                    System.out.print(boss[j] + "(" + d[j] + ")");
+                    if(j < boss.length - 1) System.out.print(", ");
+            }
+        }
+    }
+    }
 }
 
 
