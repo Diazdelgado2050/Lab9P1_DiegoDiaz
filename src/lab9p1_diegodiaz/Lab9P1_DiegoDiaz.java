@@ -61,11 +61,10 @@ public class Lab9P1_DiegoDiaz {
                     break;
                    
                 case 5:
-                    System.out.println("555");
-                    
+                    partidas(archivosGuardado);           
                     break;
                 case 6:
-                    System.out.println("66");
+                    iniciarJuego()
                     break;
                 default:
                     throw new AssertionError();
@@ -226,6 +225,19 @@ public class Lab9P1_DiegoDiaz {
         }
     }
     }
+    public static void iniciarJuego(MegaMan mega, String[] jefes, int[] derrotas, Savefile[] saves) {
+        System.out.println("¡¡Ayuda al dr Light a vencer a Wily y su ejercito de robots !! ");
+        System.out.println("Ingrese la cantidad de vidas de Megaman:");
+        int vidas = leer.nextInt();
+        leer.nextLine();
+        
+        mega.sStrenghtUp(0);
+        mega.sHealth(0);
+        
+        System.out.println("Empieza el juego Buena suerte Mega!");
+        System.out.println("===== Vidas de Megaman: " + vidas + " ====");
+        
+}
 }
 
 
