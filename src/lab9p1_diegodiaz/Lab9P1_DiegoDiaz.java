@@ -54,10 +54,10 @@ public class Lab9P1_DiegoDiaz {
                     infoBoss(bosses, beaten);
                     break;
                 case 3:
-                    System.out.println("333");
+                    ordenBosses(bosses, beaten);
                     break;
                 case 4:
-                    System.out.println("55666444");
+                    BuscarenLogs(registrosLogs);
                     break;
                    
                 case 5:
@@ -186,14 +186,24 @@ public class Lab9P1_DiegoDiaz {
             }
             
             if (nomactual) {
-                System.out.println("Log" + i + ":");
-                for (int j = 0; j < 10; j++) {
-                    
+                System.out.print("Log " + i + ": ");
+                for (int j = 0; j < arregloActual.length; j++) {
+                    if (arregloActual[j].equalsIgnoreCase(buscarJefe)) {
+                        System.out.print(arregloActual[j].toLowerCase() + "  ");
+                    } else {
+                        System.out.print("- -  ");
+                    }
                 }
+                System.out.println();
             }
         }
     }
 }
+        
+    
+                    
+                    
+     
         
         
     
